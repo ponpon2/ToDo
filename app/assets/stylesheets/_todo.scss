@@ -1,0 +1,30 @@
+.main{
+  height: 100%;
+  width: 100%;
+  &__head{
+    width: 1000px;
+    margin:50px auto;
+    text-align: center;
+    &--title{
+      font-size: 80px;
+    }
+    &--box{
+      .text-box{
+        border: none;
+        width: 600px;
+        height: 30px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .btn{
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        background:#FFDBC9;
+        border-radius: 10px;
+      }
+    }
+  }
+
+}
