@@ -1,13 +1,28 @@
 class TodoesController < ApplicationController
   def index
   end
+
   def new
     @todo = Todo.new
   end
+
   def create
-    @toto = Todo.create(todo_params)
-    respond_to do |format|
-      format.json
+    @todo = Todo.new(todo_params)
+    if @todo.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: { list: @todo.list, id: @todo.id } }
+      end
+    end
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo.destroy
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: { id: params[:id] } }
+      end
     end
   end
 
