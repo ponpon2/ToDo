@@ -1,0 +1,23 @@
+.todos{
+  width: 800px;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+  .todo-list{
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #eeeeee;
+    justify-content: space-between;
+    .delete-btn{
+      i{
+        cursor: pointer;
+        color: #000066;
+      }
+    }
+  }
+}

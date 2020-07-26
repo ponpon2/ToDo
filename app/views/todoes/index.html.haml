@@ -3,9 +3,14 @@
     .main__head--title
       ToDo
     .main__head--box
-      = form_with model: @todo do |f|
+      = form_with(model: @todo, id: "todo_input", local: true) do |f|
         = f.text_field :list, placeholder: "New List", class: "text-box"
         = f.submit "add", class: "btn"
   .main__body
-    .main__body--list 
-       
+    .main__body--list
+      .todos
+        - @todos.each do |todo|
+          .todo-list
+            = todo.list
+            = link_to todo_path(todo.id), class: "delete-btn", method: :delete do
+              = icon 'fas', 'trash'

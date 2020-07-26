@@ -1,6 +1,8 @@
 .main{
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  padding-top: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #F4A460;
   &__head{
     width: 1000px;
     margin:50px auto;
