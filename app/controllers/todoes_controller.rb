@@ -1,17 +1,18 @@
 class TodoesController < ApplicationController
   def index
+    @todos = Todo.all
   end
 
-  def new
+  def new 
     @todo = Todo.new
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @todo = Todo.create(todo_params)
     if @todo.save
       respond_to do |format|
         format.html { redirect_to root_path }
-        format.json { render json: { list: @todo.list, id: @todo.id } }
+        format.json  { render json: { list: @todo.list, id: @todo.id } }
       end
     end
   end
@@ -29,6 +30,6 @@ class TodoesController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:list)
+    params.permit(:list)
   end
 end
