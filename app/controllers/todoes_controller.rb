@@ -32,4 +32,5 @@ class TodoesController < ApplicationController
   def todo_params
     params.permit(:list)
   end
+
 end
